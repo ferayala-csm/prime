@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = ""; // Deja el campo de contraseña vacío si no la cambiaste
 $database = "prime";
 
 // Crea la conexión
@@ -14,3 +14,4 @@ if ($conn->connect_error) {
     echo "Conexión exitosa";
 }
 ?>
+
