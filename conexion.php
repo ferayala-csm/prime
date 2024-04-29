@@ -1,17 +1,15 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = ""; // Deja el campo de contraseña vacío si no la cambiaste
+$password = ""; // Si no has establecido una contraseña, déjalo en blanco
 $database = "prime";
 
 // Crea la conexión
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Verifica la conexión y muestra un mensaje
+// Verifica la conexión
 if ($conn->connect_error) {
-    echo "Conexión fallida: " . $conn->connect_error;
-} else {
-    echo "Conexión exitosa";
+    die("Conexión fallida: " . $conn->connect_error);
 }
+echo "Conexión exitosa";
 ?>
-
