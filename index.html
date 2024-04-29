@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobación de Conexión</title>
+</head>
+<body>
+    <div id="status"></div>
+
+    <script>
+        // Realiza una solicitud asíncrona a check_connection.php
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Maneja la respuesta
+                if (this.responseText.trim() === 'true') {
+                    document.getElementById("status").innerHTML = "La conexión a la base de datos es exitosa.";
+                } else {
+                    document.getElementById("status").innerHTML = "No se pudo conectar a la base de datos.";
+                }
+            }
+        };
+        xhttp.open("GET", "check_connection.php", true);
+        xhttp.send();
+    </script>
+</body>
+</html>
 
